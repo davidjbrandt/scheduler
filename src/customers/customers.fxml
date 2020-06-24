@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="viewPane" alignment="CENTER" spacing="10.0" StackPane.alignment="CENTER">
+         <children>
+            <Label fx:id="customersLabel" text="customers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="customerTable">
+              <columns>
+                  <TableColumn fx:id="nameColumn" prefWidth="100.0" text="name" />
+                <TableColumn fx:id="address1Column" prefWidth="200.0" text="address1" />
+                <TableColumn fx:id="address2Column" prefWidth="200.0" text="address2" />
+                  <TableColumn fx:id="cityColumn" prefWidth="75.0" text="city" />
+                  <TableColumn fx:id="zipColumn" prefWidth="75.0" text="zip" />
+                  <TableColumn fx:id="countryColumn" prefWidth="100.0" text="country" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="100.0" text="phone" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addClick" text="add" />
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#editClick" text="edit" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteClick" text="delete" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="maintenancePane" alignment="CENTER" spacing="10.0" visible="false" StackPane.alignment="CENTER">
+         <children>
+            <Label fx:id="customerLabel" text="customer">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="nameLabel" text="name" />
+                  <Label fx:id="address1Label" text="address1" GridPane.rowIndex="1" />
+                  <Label fx:id="address2Label" text="address2" GridPane.rowIndex="2" />
+                  <Label fx:id="cityLabel" text="city" GridPane.rowIndex="3" />
+                  <Label fx:id="zipLabel" text="zip" GridPane.rowIndex="4" />
+                  <Label fx:id="countryLabel" text="country" GridPane.rowIndex="5" />
+                  <Label fx:id="phoneLabel" text="phone" GridPane.rowIndex="6" />
+                  <TextField fx:id="nameField" GridPane.columnIndex="1" />
+                  <TextField fx:id="address1Field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="address2Field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="zipField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveClick" text="save" />
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelClick" text="cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="calendarButton" alignment="CENTER" mnemonicParsing="false" onAction="#calendarClick" prefHeight="100.0" prefWidth="150.0" text="calendar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="customersButton" alignment="CENTER" mnemonicParsing="false" onAction="#customersClick" prefHeight="100.0" prefWidth="150.0" text="customers">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="reportsButton" mnemonicParsing="false" onAction="#reportsClick" prefHeight="100.0" prefWidth="150.0" text="reports">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</HBox>

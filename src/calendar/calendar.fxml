@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="viewPane" alignment="CENTER" spacing="10.0" StackPane.alignment="CENTER">
+         <children>
+            <Label fx:id="appointmentsLabel" text="appointments">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <HBox alignment="CENTER" spacing="100.0">
+               <children>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="allDatesRadio" mnemonicParsing="false" onAction="#viewAllDates" selected="true" text="all">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="dateFilterGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="monthRadio" mnemonicParsing="false" onAction="#viewMonth" text="month" toggleGroup="$dateFilterGroup" />
+                        <RadioButton fx:id="weekRadio" mnemonicParsing="false" onAction="#viewWeek" text="week" toggleGroup="$dateFilterGroup" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="20.0">
+                     <children>
+                        <RadioButton fx:id="allUsersRadio" mnemonicParsing="false" onAction="#viewAllUsers" selected="true" text="all">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="userFilterGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="activeUserRadio" mnemonicParsing="false" onAction="#viewActiveUser" text="myAppointments" toggleGroup="$userFilterGroup" />
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <RadioButton fx:id="otherUserRadio" mnemonicParsing="false" onAction="#viewOtherUser" toggleGroup="$userFilterGroup" />
+                              <ChoiceBox fx:id="userChoiceBox" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <TableView fx:id="appointmentTable">
+              <columns>
+                <TableColumn fx:id="customerColumn" prefWidth="100.0" text="customer" />
+                  <TableColumn fx:id="userColumn" prefWidth="100.0" text="consultant" />
+                <TableColumn fx:id="titleColumn" prefWidth="125.0" text="title" />
+                  <TableColumn fx:id="locationColumn" prefWidth="125.0" text="location" />
+                  <TableColumn fx:id="contactColumn" prefWidth="100.0" text="contact" />
+                  <TableColumn fx:id="typeColumn" prefWidth="100.0" text="type" />
+                  <TableColumn fx:id="startColumn" prefWidth="125.0" text="start" />
+                  <TableColumn fx:id="endColumn" prefWidth="125.0" text="end" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addClick" text="add" />
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#editClick" text="edit" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteClick" text="delete" />
+               </children></HBox>
+         </children></VBox>
+      <VBox fx:id="maintenancePane" alignment="CENTER" spacing="10.0" visible="false" StackPane.alignment="CENTER">
+         <children>
+            <Label fx:id="appointmentLabel" text="appointment">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="10.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="customerLabel" text="customer" />
+                  <Label fx:id="titleLabel" text="title" GridPane.rowIndex="1" />
+                  <Label fx:id="descriptionLabel" text="description" GridPane.rowIndex="2" />
+                  <Label fx:id="locationLabel" text="location" GridPane.rowIndex="3" />
+                  <Label fx:id="contactLabel" text="contact" GridPane.rowIndex="4" />
+                  <Label fx:id="typeLabel" text="type" GridPane.rowIndex="5" />
+                  <Label fx:id="urlLabel" text="url" GridPane.rowIndex="6" />
+                  <Label fx:id="startLabel" text="start" GridPane.rowIndex="7" />
+                  <Label fx:id="endLabel" text="end" GridPane.rowIndex="8" />
+                  <ChoiceBox fx:id="customerPicker" GridPane.columnIndex="1" />
+                  <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="locationField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="contactField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="typeField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="urlField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <children>
+                        <ChoiceBox fx:id="startHour" />
+                        <Label text=":" />
+                        <ChoiceBox fx:id="startMinute" />
+                        <ChoiceBox fx:id="startAMPM" />
+                        <DatePicker fx:id="startDatePicker" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <children>
+                        <ChoiceBox fx:id="endHour" />
+                        <Label text=":" />
+                        <ChoiceBox fx:id="endMinute" />
+                        <ChoiceBox fx:id="endAMPM" />
+                        <DatePicker fx:id="endDatePicker" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveClick" text="save" />
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelClick" text="cancel" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
